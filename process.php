@@ -88,7 +88,7 @@ if( $_FILES['files']['name'] ) {
                         $level = '';
                         break;
                     default:
-                        $level = 6;
+                        $level = '';
                 }
 
                 // Set errors and warnings
@@ -103,22 +103,21 @@ if( $_FILES['files']['name'] ) {
                         $warning_error .= ' --warning-severity=' . $level;
                     } else {
                         $warning_error .= ' --error-severity=' . $level;
+                        $warning_error .= ' --warning-severity=' . $level;
                     }
                 }
 
-                // Create command string
-                $command_string = "vendor/bin/phpcs --standard=" . $standard . " " . $destination . $warning_error . " --report=csv --report-file=" . $destination . "/" . $filenoext . ".csv";
-                $output = shell_exec( $command_string );
-                
-                // var_dump( $output );
-                // exit( $command_string );
-                // // // echo '</pre>';
- 
                 $result = array(
                     'status'    => 'success',
                     'message'   => 'http://phpcsreport.dev1.in/' . $filenoext . '/' . $filenoext . '.csv'
                 );
-                echo json_encode( $result );
+                $result = json_encode( $result );
+
+                // Create command string
+                $command_string = "vendor/bin/phpcs --standard=" . $standard . " " . $destination . $warning_error . " --report=csv --report-file=" . $destination . "/" . $filenoext . ".csv";
+                $output = shell_exec( $command_string );
+                //var_dump( $output );
+                exit( $result );
             }
         }
     }
