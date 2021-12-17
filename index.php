@@ -31,34 +31,31 @@ if( $_FILES['files']['name'] ) {
     $destination= $path . $filenoext; // target directory
     $myFile     = $path . $filename; // target zip file
 
+    if ( ! is_dir( $destination ) ) {
+        mkdir( $destination, 0777 );
+    }
+
     if( move_uploaded_file( $source, $myFile ) ) {
         if( file_exists( $myFile ) ) {
             $zip = new ZipArchive();
             $x = $zip->open( $myFile ); // open the zip file to extract
 
-echo '<pre>';
-print_r( $myFile );
-print_r( $x );
-echo '</pre>';
-
             if ( $x === true ) {
-
-                if ( ! is_dir( $destination ) ) {
-                    mkdir( $destination, 0777 );
-                }
 
                 $zip->extractTo( $destination ); // place in the directory with same name
                 $zip->close();
                 unlink( $myFile );
 
                 echo $command_string = "phpcs --standard=WordPressVIPMinimum " . $destination; // . " --report=csv --report-file=" . $filename . ".csv";
-
-                $output = null;
-                $retval = null;
-                exec( $command_string, $output, $retval );
-                echo '<pre>-----RETVAL-----';
-                print_r( $retval );
-                echo '</pre>';
+                
+                $output = shell_exec( $command_string );
+                
+                // $output = null;
+                // $retval = null;
+                // exec( $command_string, $output, $retval );
+                // echo '<pre>-----RETVAL-----';
+                // print_r( $retval );
+                // echo '</pre>';
                 echo '<pre>-----OUTPUT-----';
                 print_r( $output );
                 echo '</pre>';
