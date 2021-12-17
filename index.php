@@ -31,15 +31,16 @@ if( $_FILES['files']['name'] ) {
     echo $destination= $path . $filenoext; // target directory
     echo $myFile     = $path . $filename; // target zip file
     
-    if ( ! is_dir( $destination ) ) {
-        mkdir( $destination, 0777 );
-    }
-
     if( move_uploaded_file( $source, $myFile ) ) {
         if( file_exists( $myFile ) ) {
             $zip = new ZipArchive();
             $x = $zip->open( $myFile ); // open the zip file to extract
             if ( $x === true ) {
+
+                if ( ! is_dir( $destination ) ) {
+                    mkdir( $destination, 0777 );
+                }
+
                 $zip->extractTo( $destination ); // place in the directory with same name
                 $zip->close();
                 unlink( $myFile );
