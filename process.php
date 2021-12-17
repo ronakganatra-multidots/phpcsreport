@@ -31,6 +31,7 @@ if( $_FILES['files']['name'] ) {
     $path       = dirname( __FILE__ ) . '/'; 
     $filenoext  = basename( $filename, '.zip' ); 
     $filenoext  = basename( $filenoext, '.ZIP' );
+    $filenoext  = str_replace( '.', '-', $filenoext );
 
     $destination= $path . $filenoext; // target directory
     $myFile     = $path . $filename; // target zip file
