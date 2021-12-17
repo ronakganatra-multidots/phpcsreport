@@ -10,9 +10,8 @@
             <div class="msg"><?php if($myMsg) echo "<p>$myMsg</p>"; ?></div>
             <div class="form_field">
                 <form enctype="multipart/form-data" method="post" action="process.php">
-                <label>Upload Zip File: </label> <input type="file" name="files">
-                <br><br>
-                
+                    <label>Upload Zip File: </label> <input type="file" name="files">
+                    <br><br>
                     <label for="wpstandard">Choose Report standard:</label>
                     <select name="wpstandard" id="wpstandard">
                     <option value="wpminimum">WordPressVIPMinimum</option>
@@ -36,7 +35,7 @@
                 </form>
             </div>
         </div>
-        <script type="text/javascript" src="jquery.min.js"></script>
-        <script type="text/javascript" src="main.js" defer></script>
+        <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+        <script type="text/javascript" src="assets/js/main.js" defer></script>
     </body>
 </html>
