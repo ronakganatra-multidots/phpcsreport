@@ -44,7 +44,7 @@ if( $_FILES['files']['name'] ) {
                 $zip->close();
                 unlink( $myFile );
 
-                $command_string = "phpcs --standard=WordPressVIPMinimum " . $destination . " --report=csv --report-file=" . $filename . ".csv";
+                $command_string = "phpcs --standard=WordPressVIPMinimum " . $destination; // . " --report=csv --report-file=" . $filename . ".csv";
 
                 $output = null;
                 $retval = null;
@@ -60,7 +60,7 @@ if( $_FILES['files']['name'] ) {
     }
 }
 ?>
-<form method="POST" action="/generate-phpcs-report/" enctype="multipart/form-data">
+<form method="POST" action="/" enctype="multipart/form-data">
     <label for="files">Select files</label>
     <input type="file" id="files" name="files"><br><br>
     <input type="submit">
