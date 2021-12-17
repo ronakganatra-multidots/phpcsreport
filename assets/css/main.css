@@ -311,10 +311,6 @@ p {
   background: rgba(88, 100, 255, 0.8);
 }
 
-.msg {
-  display: none;
-}
-
 @keyframes animation1 {
   0% {
     -webkit-transform: translateY(30px);

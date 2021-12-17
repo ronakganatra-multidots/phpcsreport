@@ -127,9 +127,36 @@
                     <span id="file-chosen" class="file-chosen">No file chosen</span>
                 </div>
 
+                <div class="phpcs_dropdown">
+                    <label for="wpstandard">Choose Report standard:</label>
+                    <select name="wpstandard" id="wpstandard">
+                        <option value="wpminimum">WordPressVIPMinimum</option>
+                        <option value="wpvipgo">WordPress-VIP-Go</option>
+                        <option value="wordpress">WordPress</option>
+                    </select>
+                </div>    
+                <div class="phpcs_dropdown">
+                    <label for="wpseverity">Choose Report Severity:</label>
+                    <select name="wpseverity" id="wpseverity">
+                    <option value="severity6andplus">Severity level 6 and above</option>
+                    <option value="severity5">Severity level 5</option>
+                    <option value="severity4andunder">Severity level 4 and under</option>
+                    <option value="severityall">All</option>
+                    </select>
+                </div>
+                <div class="phpcs_dropdown">
+                    <label for="wpreporterr">Choose Report Errors and Warnings:</label>
+                    <select name="wpreporterr" id="wpreporterr">
+                    <option value="wperr">Errors</option>
+                    <option value="wpwar">Warnings</option>
+                    <option value="wperrandwar">Both</option>
+                    </select>
+                </div>    
+
                 <button type="submit" class="main-btn btn-hover main-btn-submit">
                   Generate Report
                 </button>
+                
                 <div class="msg"></div>
 
               </form>
