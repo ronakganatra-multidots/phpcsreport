@@ -30,15 +30,17 @@ if( $_FILES['files']['name'] ) {
     
     $destination= $path . $filenoext; // target directory
     $myFile     = $path . $filename; // target zip file
-    
-echo '<pre>';
-print_r( move_uploaded_file( $source, $myFile ) );
-echo '</pre>';
 
     if( move_uploaded_file( $source, $myFile ) ) {
         if( file_exists( $myFile ) ) {
             $zip = new ZipArchive();
             $x = $zip->open( $myFile ); // open the zip file to extract
+
+echo '<pre>';
+print_r( $myFile );
+print_r( $x );
+echo '</pre>';
+
             if ( $x === true ) {
 
                 if ( ! is_dir( $destination ) ) {
