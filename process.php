@@ -1,10 +1,6 @@
 <?php
 if( $_FILES['files']['name'] ) {
 
-    echo '<pre>-----$_POST-----';
-    print_r( $_POST );
-    echo '</pre>';
-
     $filename   = $_FILES['files']['name'];
     $source     = $_FILES['files']['tmp_name'];
     $type       = $_FILES['files']['type'];
