@@ -19,10 +19,10 @@
 		e.preventDefault();
 		var __this 		= $( this ),
 			actionUrl 	= __this.attr( 'action' ) || '',
-			inputFile 	= __this.find( '#actual-btn' ) || '',
-			wpstandard 	= __this.find( '#wpstandard' ) || '',
-			wpseverity 	= __this.find( '#wpseverity' ) || '',
-			wpreporterr = __this.find( '#wpreporterr' ) || '';
+			inputFile 	= __this.find( '#actual-btn' ).val() || '',
+			wpstandard 	= __this.find( '#wpstandard' ).val() || '',
+			wpseverity 	= __this.find( '#wpseverity' ).val() || '',
+			wpreporterr = __this.find( '#wpreporterr' ).val() || '';
 		if( '' != inputFile && '' != actionUrl && '' != wpstandard && '' != wpseverity && '' != wpreporterr ) {
 			__this.find( '.msg' ).removeClass( 'error' ).removeClass( 'success' ).hide();
 			$.ajax({
