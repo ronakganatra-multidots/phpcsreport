@@ -16,6 +16,8 @@
 	new WOW().init();
 
 	$( "form" ).on( 'submit', function( e ) {
+		$('submit').attr('disabled');
+		$("submit").html('Generating...');
 		e.preventDefault();
 		var __this 		= $( this ),
 			actionUrl 	= __this.attr( 'action' ) || '',
@@ -36,6 +38,8 @@
 					var result = JSON.parse( response );
 					__this.find( '.msg' ).html( result.message ).show();
 					__this.find( '.msg' ).addClass( result.status );
+					$('submit').removeAttr('disabled');
+					$("submit").html('Generate Report');
 				}           
 			});
 		} else {
