@@ -767,7 +767,7 @@ p {
 .hero-section {
   position: relative;
   z-index: 1;
-  padding: 100px 0 50px;
+  padding: 10px 0 50px;
   background-image: url("../img/hero/hero-bg.svg");
   background-position: top center;
   background-repeat: no-repeat;
@@ -1292,10 +1292,14 @@ p {
 .phpcs-section .phpcs-wrapper .msg.error {
   display: inline-block;
 }
-.phpcs-section .phpcs-wrapper .msg.success {
+.phpcs-section .phpcs-wrapper .msg.success,
+.phpcs-section .phpcs-wrapper .msg.success a {
   display: inline-block;
   color: #0ad523;
   border-color: #0ad523;
+}
+.phpcs-section .phpcs-wrapper .msg.success a {
+  text-decoration: underline;
 }
 
 @media (max-width: 767px) {
