@@ -50,12 +50,36 @@ if( $_FILES['files']['name'] ) {
                 $zip->close();
                 unlink( $myFile );
 
-                $command_string = "vendor/bin/phpcs --standard=WordPressVIPMinimum " . $destination; // . " --report=csv --report-file=" . $filename . ".csv";
+                $wpstandard = filter_input( INPUT_POST, 'wpstandard', FILTER_SANITIZE_STRING );
+                $wpseverity = filter_input( INPUT_POST, 'wpseverity', FILTER_SANITIZE_STRING );
+                $wpreporterr= filter_input( INPUT_POST, 'wpreporterr', FILTER_SANITIZE_STRING );
+
+                $wpstandard = ! empty( $wpstandard ) ? $wpstandard : 'wpvipgo';
+                $wpseverity = ! empty( $wpseverity ) ? $wpseverity : 'severity6andplus';
+                $wpstandard = ! empty( $wpstandard ) ? $wpstandard : 'wperr';
+
+                switch( $wpstandard ) {
+                    case 'wpvipgo':
+                        $standard = 'WordPress-VIP-Go';
+                        break;
+                    case 'wpminimum':
+                        $standard = 'WordPressVIPMinimum';
+                        break;
+                    case 'wordpress':
+                        $standard = 'WordPress';
+                        break;
+                    default:
+                        $standard = 'WordPress-VIP-Go';
+                }
+
+                // phpcs --standard=WordPress-VIP-Go -sp --basepath=. --ignore=vendor --warning-severity=6 --error-severity=6 --report=csv
+
+                $command_string = "vendor/bin/phpcs --standard=" . $standard . " " . $destination . " --report=csv --report-file=" . $destination . "/" . $filenoext . ".csv";
                 
                 $output = shell_exec( $command_string );
                 // echo '<pre>-----PHPCS OUTPUT-----';
                 var_dump( $output );
-                exit( '123' );
+                exit( $command_string );
                 // echo '</pre>';
  
                 // $result = array(
