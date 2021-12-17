@@ -84,8 +84,8 @@
                 <div class="phpcs_dropdown">
                     <label for="wpstandard">Choose Report standard:</label>
                     <select name="wpstandard" id="wpstandard">
-                        <option value="wpminimum">WordPressVIPMinimum</option>
                         <option value="wpvipgo">WordPress-VIP-Go</option>
+                        <option value="wpminimum">WordPressVIPMinimum</option>
                         <option value="wordpress">WordPress</option>
                     </select>
                 </div>    

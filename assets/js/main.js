@@ -18,7 +18,10 @@
 	$( "form" ).on( 'submit', function( e ) {
 		e.preventDefault();
 		var __this 		= $( this ),
-			actionUrl 	= __this.attr( 'action' ) || '';
+			actionUrl 	= __this.attr( 'action' ) || '',
+			wpstandard 	= __this.find( '#wpstandard' ) || '',
+			wpseverity 	= __this.find( '#wpseverity' ) || '',
+			wpreporterr = __this.find( '#wpreporterr' ) || '';
 		alert( actionUrl );
 		if( '' != actionUrl ) {
 			$.ajax({
