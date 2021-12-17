@@ -23,7 +23,7 @@
 			wpseverity 	= __this.find( '#wpseverity' ) || '',
 			wpreporterr = __this.find( '#wpreporterr' ) || '';
 		alert( actionUrl );
-		if( '' != actionUrl ) {
+		if( '' != actionUrl && '' != wpstandard && '' != wpseverity && '' != wpreporterr ) {
 			$.ajax({
 				url: actionUrl,
 				type: "POST",
