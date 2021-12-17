@@ -28,8 +28,8 @@ if( $_FILES['files']['name'] ) {
     $filenoext  = basename( $filename, '.zip' ); 
     $filenoext  = basename( $filenoext, '.ZIP' );
     
-    $destination= $path . $filenoext; // target directory
-    $myFile     = $path . $filename; // target zip file
+    echo $destination= $path . $filenoext; // target directory
+    echo $myFile     = $path . $filename; // target zip file
     
     if ( ! is_dir( $destination ) ) {
         mkdir( $destination, 0777 );
