@@ -52,10 +52,10 @@ if( $_FILES['files']['name'] ) {
 
                 echo $command_string = "phpcs --standard=WordPressVIPMinimum " . $destination; // . " --report=csv --report-file=" . $filename . ".csv";
                 
-                // $output = shell_exec( 'which composer' );
-                // echo '<pre>-----Composer OUTPUT-----';
-                // print_r( $output );
-                // echo '</pre>';
+                $output = shell_exec( 'which composer' );
+                echo '<pre>-----Composer OUTPUT-----';
+                print_r( $output );
+                echo '</pre>';
                 
                 // $output = shell_exec( 'which phpcs' );
                 // echo '<pre>-----Which phpcs OUTPUT-----';
