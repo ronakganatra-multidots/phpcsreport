@@ -33,8 +33,8 @@
 				processData: false,
 				success: function( response ) {
 					console.log( response );
-					// var result = JSON.parse( response );
-					// __this.find( '.msg' ).html( result.message ).show();
+					var result = JSON.parse( response );
+					__this.find( '.msg' ).html( result.message ).show();
 				}           
 			});
 		}
