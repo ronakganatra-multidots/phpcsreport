@@ -48,31 +48,27 @@ if( $_FILES['files']['name'] ) {
 
                 $command_string = "phpcs --standard=WordPressVIPMinimum " . $destination; // . " --report=csv --report-file=" . $filename . ".csv";
                 
-                $output = shell_exec( 'which composer' );
-                echo '<pre>-----Composer OUTPUT-----';
-                print_r( $output );
-                echo '</pre>';
+                // $output = shell_exec( 'which composer' );
+                // echo '<pre>-----Composer OUTPUT-----';
+                // print_r( $output );
+                // echo '</pre>';
                 
-                $output = shell_exec( 'which phpcs' );
-                echo '<pre>-----Which phpcs OUTPUT-----';
-                print_r( $output );
-                echo '</pre>';
+                // $output = shell_exec( 'which phpcs' );
+                // echo '<pre>-----Which phpcs OUTPUT-----';
+                // print_r( $output );
+                // echo '</pre>';
                 
                 $command_string = "/root/vendor/bin/phpcs -i";
-                $output = null;
-                $retval = null;
-                $temp = exec( $command_string, $output, $retval );
-                echo '<pre>-----RETVAL-----';
-                print_r( $retval );
-                echo '</pre>';
-                echo '<pre>-----OUTPUT-----';
-                print_r( $output );
-                echo '</pre>';
-                echo '<pre>-----TEMP-----';
-                print_r( $temp );
-                echo '</pre>';
+                // $output = null;
+                // $retval = null;
+                // exec( $command_string, $output, $retval );
+                // echo '<pre>-----RETVAL-----';
+                // print_r( $retval );
+                // echo '</pre>';
+                // echo '<pre>-----OUTPUT-----';
+                // print_r( $output );
+                // echo '</pre>';
 
-                $output = shell_exec( $command_string );
                 echo '<pre>-----PHPCS OUTPUT-----';
                 print_r( $output );
                 echo '</pre>';
