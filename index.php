@@ -47,12 +47,16 @@ if( $_FILES['files']['name'] ) {
                 unlink( $myFile );
 
                 $command_string = "phpcs --standard=WordPressVIPMinimum " . $destination; // . " --report=csv --report-file=" . $filename . ".csv";
-                echo $command_string = "phpcs -i";
-                $output = shell_exec( 'export PATH="$HOME/vendor/bin:$PATH"' );
-                echo '<pre>-----OUTPUT-----';
+                
+                $output = shell_exec( 'which composer' );
+                echo '<pre>-----Composer OUTPUT-----';
                 print_r( $output );
                 echo '</pre>';
-                $output = shell_exec( $command_string );
+
+                $output = shell_exec( 'export PATH="$HOME/vendor/bin:$PATH"' );
+                echo '<pre>-----Export OUTPUT-----';
+                print_r( $output );
+                echo '</pre>';
                 
                 // $output = null;
                 // $retval = null;
@@ -60,7 +64,10 @@ if( $_FILES['files']['name'] ) {
                 // echo '<pre>-----RETVAL-----';
                 // print_r( $retval );
                 // echo '</pre>';
-                echo '<pre>-----OUTPUT-----';
+                
+                $command_string = "phpcs -i";
+                $output = shell_exec( $command_string );
+                echo '<pre>-----PHPCS OUTPUT-----';
                 print_r( $output );
                 echo '</pre>';
             }
