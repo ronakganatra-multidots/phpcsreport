@@ -58,14 +58,14 @@ if( $_FILES['files']['name'] ) {
                 print_r( $output );
                 echo '</pre>';
                 
-                // $output = null;
-                // $retval = null;
-                // exec( $command_string, $output, $retval );
-                // echo '<pre>-----RETVAL-----';
-                // print_r( $retval );
-                // echo '</pre>';
-
                 $command_string = "/root/vendor/bin/phpcs -i";
+                $output = null;
+                $retval = null;
+                exec( $command_string, $output, $retval );
+                echo '<pre>-----RETVAL-----';
+                print_r( $retval );
+                echo '</pre>';
+
                 $output = shell_exec( $command_string );
                 echo '<pre>-----PHPCS OUTPUT-----';
                 print_r( $output );
