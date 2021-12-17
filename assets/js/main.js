@@ -16,8 +16,6 @@
 	new WOW().init();
 
 	$( "form" ).on( 'submit', function( e ) {
-		$('.main-btn-submit').attr('disabled');
-		$(".main-btn-submit").html('Generating...');
 		e.preventDefault();
 		var __this 		= $( this ),
 			actionUrl 	= __this.attr( 'action' ) || '',
@@ -25,6 +23,9 @@
 			wpstandard 	= __this.find( '#wpstandard' ).val() || '',
 			wpseverity 	= __this.find( '#wpseverity' ).val() || '',
 			wpreporterr = __this.find( '#wpreporterr' ).val() || '';
+
+		__this.find('.main-btn-submit').attr( 'disabled', 'disabled' );
+		__this.find(".main-btn-submit").html('Generating...');
 		if( '' != inputFile && '' != actionUrl && '' != wpstandard && '' != wpseverity && '' != wpreporterr ) {
 			__this.find( '.msg' ).removeClass( 'error' ).removeClass( 'success' ).hide();
 			$.ajax({
@@ -38,8 +39,8 @@
 					var result = JSON.parse( response );
 					__this.find( '.msg' ).html( result.message ).show();
 					__this.find( '.msg' ).addClass( result.status );
-					$('.main-btn-submit').removeAttr('disabled');
-					$(".main-btn-submit").html('Generate Report');
+					__this.find('.main-btn-submit').removeAttr( 'disabled' );
+					__this.find(".main-btn-submit").html('Generate Report');
 				}           
 			});
 		} else {
