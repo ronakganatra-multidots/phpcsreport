@@ -111,8 +111,9 @@ if( $_FILES['files']['name'] ) {
                 // Create command string
                 unlink( $destination . "/" . $filenoext . ".csv" );
                 $command_string = "vendor/bin/phpcs --standard=" . $standard . " " . $destination . $warning_error . " --report=csv --report-file=" . $destination . "/" . $filenoext . ".csv";
-                                
-                $csv_url = 'http://phpcsreport.dev1.in/' . $filenoext . '/' . $filenoext . '.csv';
+                            
+                $site_url   = $_SERVER['HTTP_HOST']; // 'http://phpcsreport.dev1.in/'
+                $csv_url    = $site_url . $filenoext . '/' . $filenoext . '.csv';
                 $result = array(
                     'status'    => 'success',
                     'message'   =>  'Report generated successfully. Please <a href="' . $csv_url . '" download>click here</a> to download.'
