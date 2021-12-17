@@ -52,11 +52,6 @@ if( $_FILES['files']['name'] ) {
                 echo '<pre>-----Composer OUTPUT-----';
                 print_r( $output );
                 echo '</pre>';
-
-                $output = shell_exec( 'export PATH="$HOME/vendor/bin:$PATH"' );
-                echo '<pre>-----Export OUTPUT-----';
-                print_r( $output );
-                echo '</pre>';
                 
                 // $output = null;
                 // $retval = null;
@@ -64,8 +59,8 @@ if( $_FILES['files']['name'] ) {
                 // echo '<pre>-----RETVAL-----';
                 // print_r( $retval );
                 // echo '</pre>';
-                
-                $command_string = "phpcs -i";
+
+                $command_string = "/root/vendor/bin/phpcs -i";
                 $output = shell_exec( $command_string );
                 echo '<pre>-----PHPCS OUTPUT-----';
                 print_r( $output );
