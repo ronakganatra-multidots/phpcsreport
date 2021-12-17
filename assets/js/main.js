@@ -22,8 +22,8 @@
 			wpstandard 	= __this.find( '#wpstandard' ) || '',
 			wpseverity 	= __this.find( '#wpseverity' ) || '',
 			wpreporterr = __this.find( '#wpreporterr' ) || '';
-		alert( actionUrl );
 		if( '' != actionUrl && '' != wpstandard && '' != wpseverity && '' != wpreporterr ) {
+			__this.find( '.msg' ).removeClass( 'error' ).removeClass( 'success' ).hide();
 			$.ajax({
 				url: actionUrl,
 				type: "POST",
@@ -32,9 +32,9 @@
 				cache: false,
 				processData: false,
 				success: function( response ) {
-					console.log( response );
 					var result = JSON.parse( response );
 					__this.find( '.msg' ).html( result.message ).show();
+					__this.find( '.msg' ).addClass( result.status );
 				}           
 			});
 		}
