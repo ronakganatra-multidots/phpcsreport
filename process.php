@@ -107,9 +107,10 @@ if( $_FILES['files']['name'] ) {
                     }
                 }
 
+                $csv_url = 'http://phpcsreport.dev1.in/' . $filenoext . '/' . $filenoext . '.csv';
                 $result = array(
                     'status'    => 'success',
-                    'message'   => 'http://phpcsreport.dev1.in/' . $filenoext . '/' . $filenoext . '.csv'
+                    'message'   =>  'Report generated successfully. Please <a href="' . $csv_url . '" download>click here</a> to download.'
                 );
                 $result = json_encode( $result );
 
