@@ -1582,6 +1582,11 @@ select:active {
   .phpcs-section .phpcs-wrapper .phpcs-report-form .choose-file{
     padding: 20px;
   }
+  .phpcs-section .phpcs-wrapper {
+    padding: 65px 50px 50px;
+    border-radius: 30px;
+    background: #ee5a0ef7;
+  }
 }
 
 .footer .widget-wrapper .footer-widget {
