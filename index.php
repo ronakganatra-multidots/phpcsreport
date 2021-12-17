@@ -7,7 +7,7 @@
     <body>
         <div class="box">
             <div class="heading">Upload File and Unzip</div>
-            <div class="msg"><?php if($myMsg) echo "<p>$myMsg</p>"; ?></div>
+            <div class="msg"></div>
             <div class="form_field">
                 <form enctype="multipart/form-data" method="post" action="process.php">
                     <label>Upload Zip File: </label> <input type="file" name="files">

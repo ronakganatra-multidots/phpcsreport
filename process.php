@@ -21,9 +21,14 @@ if( $_FILES['files']['name'] ) {
         }
     }
 
-    $continue = strtolower($name[1]) == 'zip' ? true : false;
+    $continue = strtolower( $name[1] ) == 'zip' ? true : false;
     if( ! $continue ) {
-        $msg = 'Please upload a valid .zip file.';
+        $result = array(
+            'status'    => 'error',
+            'message'   => 'Please upload a valid .zip file.'
+        );
+        echo json_encode( $result );
+        die();
     }
 
     /* PHP current path */
@@ -61,7 +66,7 @@ if( $_FILES['files']['name'] ) {
                 // print_r( $output );
                 // echo '</pre>';
                 
-                $command_string = "/root/vendor/bin/phpcs -i";
+                $command_string = "phpcs -i";
                 // $output = null;
                 // $retval = null;
                 // exec( $command_string, $output, $retval );
@@ -75,6 +80,12 @@ if( $_FILES['files']['name'] ) {
                 echo '<pre>-----PHPCS OUTPUT-----';
                 print_r( $output );
                 echo '</pre>';
+
+                $result = array(
+                    'status'    => 'success',
+                    'message'   => 'Process has successed..!!'
+                );
+                echo json_encode( $result );
             }
         }
     }

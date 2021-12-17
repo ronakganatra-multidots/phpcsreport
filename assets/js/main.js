@@ -2,7 +2,8 @@
 	"use strict";
 	$( "form" ).on( 'submit', function( e ) {
 		e.preventDefault();
-		var actionUrl = $( this ).attr( 'action' ) || '';
+		var __this 		= $( this ),
+			actionUrl 	= __this.attr( 'action' ) || '';
 		alert( actionUrl );
 		if( '' != actionUrl ) {
 			$.ajax({
@@ -12,8 +13,10 @@
 				contentType: false,
 				cache: false,
 				processData: false,
-				success: function( data ){
-					console.log( data );
+				success: function( response ) {
+					var result = $.parseJSON( response );
+					console.log( result );
+					__this.find( '.msg' ).html( 'Sucess..!!' );
 				}           
 			});
 		}
