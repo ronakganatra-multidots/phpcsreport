@@ -1,0 +1,11 @@
+<svg version="1.2" baseProfile="tiny-ps" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 136 28" width="136" height="28">
+	<title>New Project</title>
+	<style>
+		tspan { white-space:pre }
+		.t0 { font-size: 24px;fill: #ffffff;font-weight: 700;font-family: "Arimo-Bold", "Arimo" } 
+	</style>
+	<text id="Critical CSS" style="transform: matrix(1,0,0,1,-1,22)" >
+		<tspan x="0" y="0" class="t0">C</tspan><tspan  y="0" class="t0">r</tspan><tspan  y="0" class="t0">i</tspan><tspan  y="0" class="t0">t</tspan><tspan  y="0" class="t0">i</tspan><tspan  y="0" class="t0">c</tspan><tspan  y="0" class="t0">a</tspan><tspan  y="0" class="t0">l</tspan><tspan  y="0" class="t0"> </tspan><tspan  y="0" class="t0">C</tspan><tspan  y="0" class="t0">S</tspan><tspan  y="0" class="t0">S
+</tspan>
+	</text>
+</svg>
