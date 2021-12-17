@@ -96,7 +96,7 @@ if( $_FILES['files']['name'] ) {
                 if( ! empty( $level ) ) {
                     if( 'wperr' == $wpreporterr ) {
                         $warning_error .= ' --error-severity=' . $level;
-                    } else if( 'wperr' == $wpreporterr ) {
+                    } else if( 'wpwar' == $wpreporterr ) {
                         $warning_error .= ' --warning-severity=' . $level;
                     } else if( 'wperrandwar' == $wpreporterr ) {
                         $warning_error .= ' --error-severity=' . $level;
