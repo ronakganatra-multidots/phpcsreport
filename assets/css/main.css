@@ -49,7 +49,7 @@ button:focus,
 }
 
 a:hover {
-  color: #5864FF;
+  color: #eb5402;
 }
 
 a {
@@ -238,7 +238,7 @@ p {
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
   border: none;
-  background: #5864FF;
+  background: #eb5402;
   overflow: hidden;
 }
 
@@ -247,9 +247,9 @@ p {
 }
 
 .main-btn.border-btn {
-  border: 2px solid #5864FF;
+  border: 2px solid #eb5402;
   background: transparent;
-  color: #5864FF;
+  color: #eb5402;
 }
 
 .btn-hover {
@@ -282,7 +282,7 @@ p {
 .scroll-top {
   width: 45px;
   height: 45px;
-  background: #5864FF;
+  background: #eb5402;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -418,7 +418,7 @@ p {
   height: 100%;
   border-style: solid;
   /* Spinner Color */
-  border-color: #5864FF #5864FF #ddd;
+  border-color: #eb5402 #eb5402 #ddd;
   border-radius: 50%;
   border-width: 6px;
 }
@@ -767,8 +767,8 @@ p {
 .hero-section {
   position: relative;
   z-index: 1;
-  padding: 10px 0 50px;
-  background-image: url("../img/hero/hero-bg.svg");
+  padding: 100px 0 50px;
+  background-image: url("../img/hero/hero-bg-orange.png");
   background-position: top center;
   background-repeat: no-repeat;
 }
@@ -853,8 +853,8 @@ p {
   height: 40px;
   border-radius: 50%;
   background: #fff;
-  border: 3px solid #5864FF;
-  color: #5864FF;
+  border: 3px solid #eb5402;
+  color: #eb5402;
   left: 15px;
   bottom: 0;
   z-index: 9;
@@ -936,7 +936,7 @@ p {
   height: 130px;
   border-radius: 50%;
   background: rgba(88, 100, 255, 0.1);
-  color: #5864FF;
+  color: #eb5402;
   margin: auto;
   margin-bottom: 30px;
   font-size: 65px;
@@ -1021,7 +1021,7 @@ p {
 }
 
 .box-style .content a.main-btn.border-btn:hover {
-  color: #5864FF;
+  color: #eb5402;
 }
 
 .box-style .content a.main-btn.border-btn:hover::after {
@@ -1041,15 +1041,15 @@ p {
 }
 
 .box-style.color-2 {
-  border-color: #5864FF;
+  border-color: #eb5402;
 }
 
 .box-style.color-2 .icon {
-  color: #5864FF;
+  color: #eb5402;
 }
 
 .box-style.color-2 .content a:hover {
-  color: #5864FF;
+  color: #eb5402;
 }
 
 .box-style.color-2 .content .main-btn:hover {
@@ -1212,7 +1212,7 @@ p {
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background: #5864FF;
+  background: #eb5402;
   position: absolute;
   left: 0;
   top: 6.5px;
@@ -1246,7 +1246,7 @@ p {
   font-size: 65px;
   line-height: 1;
   margin-bottom: 30px;
-  color: #5864FF;
+  color: #eb5402;
 }
 
 .feature-extended-section .single-feature-extended .content h3 {
@@ -1273,33 +1273,10 @@ p {
 }
 
 .phpcs-section .phpcs-wrapper {
-  background-image: url("../img/subscribe/subscribe-bg.svg");
+  background-image: url("../img/subscribe/subscribe-bg-orange.png");
   padding: 65px 50px 50px;
   border-radius: 30px;
-}
-
-.phpcs-section .phpcs-wrapper .msg {
-  display: none;
-  float: left;
-  width: 100%;
-  color: #93160d;
-  border: 1px solid #93160d;
-  padding: 5px 15px;
-  margin-top: 10px;
-  border-radius: 5px;
-}
-
-.phpcs-section .phpcs-wrapper .msg.error {
-  display: inline-block;
-}
-.phpcs-section .phpcs-wrapper .msg.success,
-.phpcs-section .phpcs-wrapper .msg.success a {
-  display: inline-block;
-  color: #0ad523;
-  border-color: #0ad523;
-}
-.phpcs-section .phpcs-wrapper .msg.success a {
-  text-decoration: underline;
+  background-size: auto;
 }
 
 @media (max-width: 767px) {
@@ -1411,7 +1388,7 @@ p {
   margin-left: 0.3rem;
 }
 .phpcs-section .phpcs-wrapper .phpcs-report-form .choose-file {
-    background-color: #5764ff;
+    background-color: #eb5402;
     color: white;
     font-family: sans-serif;
     border-radius: 0.3rem;
@@ -1433,7 +1410,29 @@ p {
     transition: all 0.3s ease-out 0s;
 }
 
-
+.phpcs-section .phpcs-wrapper .msg {
+  display: none;
+  float: left;
+  width: 100%;
+  padding: 5px 15px;
+  margin-top: 10px;
+  border-radius: 5px;
+  background: #ffffffb8;
+}
+.phpcs-section .phpcs-wrapper .msg.error {
+  display: inline-block;
+  color: #eb5402;
+  border: 1px solid #cb4e0a;
+}
+.phpcs-section .phpcs-wrapper .msg.success,
+.phpcs-section .phpcs-wrapper .msg.success a {
+  display: inline-block;
+  color: #028713;
+    border-color: #028713;
+}
+.phpcs-section .phpcs-wrapper .msg.success a {
+  text-decoration: underline;
+}
 
 
 
@@ -1448,9 +1447,9 @@ p {
 .phpcs_dropdown {
       --radius: 18px;
     --baseFg: #ffffff;
-    --baseBg: #5764ff;
+    --baseBg: #eb5402;
     --accentFg: #ffffff;
-    --accentBg: #6570fc;
+    --accentBg: #eb5402;
 
 
     display: inline-block;
@@ -1511,7 +1510,7 @@ select:active {
     position: static;
     margin-top: 20px;
     background: #fff;
-    color: #5864FF;
+    color: #eb5402;
     padding: 17.5px 35px;
   }
 }
@@ -1520,7 +1519,7 @@ select:active {
   .phpcs-section .phpcs-wrapper .phpcs-report-form button {
     margin-top: 0px;
     color: #fff;
-    background: #5864FF;
+    background: #eb5402;
     padding: 17.5px 25px;
   }
   .phpcs-section .phpcs-wrapper .phpcs-report-form input{
@@ -1535,11 +1534,10 @@ select:active {
 
 /* ======= footer css ======= */
 .footer {
-  background-image: url("../img/footer/footer-bg.svg");
-  background-size: cover;
-  background-position: top right;
-  padding-top: 260px;
-  margin-top: 100px;
+      background: #fc774f;
+    min-height: 100px;
+    width: 100%;
+    margin-top: 50px;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -1562,7 +1560,7 @@ select:active {
 @media (max-width: 767px) {
   .footer {
     padding-top: 120px;
-    background: #5864FF;
+    background: #eb5402;
   }
   .phpcs-section .phpcs-wrapper .phpcs-report-form .file-upload-section {
       width: 100%;
@@ -1625,7 +1623,7 @@ select:active {
 }
 
 .footer .widget-wrapper .footer-widget .socials li a:hover {
-  color: #5864FF;
+  color: #eb5402;
   background: #fff;
 }
 
