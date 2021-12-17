@@ -107,17 +107,18 @@ if( $_FILES['files']['name'] ) {
                     }
                 }
 
+                // Create command string
+                $command_string = "vendor/bin/phpcs --standard=" . $standard . " " . $destination . $warning_error . " --report=csv --report-file=" . $destination . "/" . $filenoext . ".csv";
+                                
                 $csv_url = 'http://phpcsreport.dev1.in/' . $filenoext . '/' . $filenoext . '.csv';
                 $result = array(
                     'status'    => 'success',
-                    'message'   =>  'Report generated successfully. Please <a href="' . $csv_url . '" download>click here</a> to download.'
+                    'message'   =>  $command_string . '----Report generated successfully. Please <a href="' . $csv_url . '" download>click here</a> to download.'
                 );
                 $result = json_encode( $result );
 
-                // Create command string
-                $command_string = "vendor/bin/phpcs --standard=" . $standard . " " . $destination . $warning_error . " --report=csv --report-file=" . $destination . "/" . $filenoext . ".csv";
+                // Execute command with command string
                 $output = shell_exec( $command_string );
-                //var_dump( $output );
                 exit( $result );
             }
         }
