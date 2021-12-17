@@ -48,7 +48,10 @@ if( $_FILES['files']['name'] ) {
 
                 $command_string = "phpcs --standard=WordPressVIPMinimum " . $destination; // . " --report=csv --report-file=" . $filename . ".csv";
                 echo $command_string = "phpcs -i";
-                shell_exec( 'export PATH="$HOME/vendor/bin:$PATH"' );
+                $output = shell_exec( 'export PATH="$HOME/vendor/bin:$PATH"' );
+                echo '<pre>-----OUTPUT-----';
+                print_r( $output );
+                echo '</pre>';
                 $output = shell_exec( $command_string );
                 
                 // $output = null;
