@@ -50,9 +50,9 @@ if( $_FILES['files']['name'] ) {
                 $zip->close();
                 unlink( $myFile );
 
-                $command_string = "phpcs --standard=WordPressVIPMinimum " . $destination; // . " --report=csv --report-file=" . $filename . ".csv";
+                $command_string = "vendor/bin/phpcs --standard=WordPressVIPMinimum " . $destination; // . " --report=csv --report-file=" . $filename . ".csv";
                 
-                $output = shell_exec( 'phpcs -i' );
+                $output = shell_exec( $command_string );
                 // echo '<pre>-----PHPCS OUTPUT-----';
                 var_dump( $output );
                 exit( '123' );
