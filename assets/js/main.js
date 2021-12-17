@@ -29,9 +29,9 @@
 				cache: false,
 				processData: false,
 				success: function( response ) {
-					var result = JSON.parse( response );
-					console.log( result );
-					__this.find( '.msg' ).html( result.message ).show();
+					console.log( response );
+					// var result = JSON.parse( response );
+					// __this.find( '.msg' ).html( result.message ).show();
 				}           
 			});
 		}

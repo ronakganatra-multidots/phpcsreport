@@ -77,11 +77,11 @@ if( $_FILES['files']['name'] ) {
                 print_r( $output );
                 echo '</pre>';
 
-                $result = array(
-                    'status'    => 'success',
-                    'message'   => 'Process has successed..!!'
-                );
-                echo json_encode( $result );
+                // $result = array(
+                //     'status'    => 'success',
+                //     'message'   => 'Process has successed..!!'
+                // );
+                // echo json_encode( $result );
             }
         }
     }
