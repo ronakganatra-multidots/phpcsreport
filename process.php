@@ -52,7 +52,7 @@ if( $_FILES['files']['name'] ) {
 
                 echo $command_string = "phpcs --standard=WordPressVIPMinimum " . $destination; // . " --report=csv --report-file=" . $filename . ".csv";
                 
-                $output = shell_exec( 'phpcs -i' );
+                $output = shell_exec( 'vendor/bin/phpcs -i' );
                 echo '<pre>-----PHPCS OUTPUT-----';
                 print_r( $output );
                 echo '</pre>';
