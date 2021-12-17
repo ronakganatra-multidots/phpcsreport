@@ -62,7 +62,7 @@ if( $_FILES['files']['name'] ) {
                 // print_r( $output );
                 // echo '</pre>';
                 
-                $command_string = "phpcs -i";
+                // $command_string = "phpcs -i";
                 // $output = null;
                 // $retval = null;
                 // exec( $command_string, $output, $retval );
@@ -73,7 +73,7 @@ if( $_FILES['files']['name'] ) {
                 // print_r( $output );
                 // echo '</pre>';
 
-                $output = shell_exec( $command_string );
+                $output = shell_exec( 'phpcs -i' );
                 echo '<pre>-----PHPCS OUTPUT-----';
                 print_r( $output );
                 echo '</pre>';
