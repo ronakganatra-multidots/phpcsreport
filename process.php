@@ -17,7 +17,8 @@ if( $_FILES['files']['name'] ) {
         }
     }
 
-    $continue = strtolower( $name[1] ) == 'zip' ? true : false;
+    $extention_key = count( $name ) - 1;
+    $continue = strtolower( $name[$extention_key] ) == 'zip' ? true : false;
     if( ! $continue ) {
         $result = array(
             'status'    => 'error',
