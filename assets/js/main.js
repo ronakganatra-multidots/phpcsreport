@@ -3,6 +3,7 @@
 	$( "form" ).on( 'submit', function( e ) {
 		e.preventDefault();
 		var actionUrl = $( this ).attr( 'action' ) || '';
+		alert( actionUrl );
 		if( '' != actionUrl ) {
 			$.ajax({
 				url: actionUrl,
@@ -16,5 +17,6 @@
 				}           
 			});
 		}
+		return false;
 	} );
 }( jQuery ) );
