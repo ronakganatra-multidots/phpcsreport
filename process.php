@@ -73,6 +73,7 @@ if( $_FILES['files']['name'] ) {
                 // print_r( $output );
                 // echo '</pre>';
 
+                $output = shell_exec( $command_string );
                 echo '<pre>-----PHPCS OUTPUT-----';
                 print_r( $output );
                 echo '</pre>';
