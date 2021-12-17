@@ -61,9 +61,15 @@ if( $_FILES['files']['name'] ) {
                 $command_string = "/root/vendor/bin/phpcs -i";
                 $output = null;
                 $retval = null;
-                exec( $command_string, $output, $retval );
+                $temp = exec( $command_string, $output, $retval );
                 echo '<pre>-----RETVAL-----';
                 print_r( $retval );
+                echo '</pre>';
+                echo '<pre>-----OUTPUT-----';
+                print_r( $output );
+                echo '</pre>';
+                echo '<pre>-----TEMP-----';
+                print_r( $temp );
                 echo '</pre>';
 
                 $output = shell_exec( $command_string );
