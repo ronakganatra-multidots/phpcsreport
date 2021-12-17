@@ -28,9 +28,13 @@ if( $_FILES['files']['name'] ) {
     $filenoext  = basename( $filename, '.zip' ); 
     $filenoext  = basename( $filenoext, '.ZIP' );
     
-    echo $destination= $path . $filenoext; // target directory
-    echo $myFile     = $path . $filename; // target zip file
+    $destination= $path . $filenoext; // target directory
+    $myFile     = $path . $filename; // target zip file
     
+echo '<pre>';
+print_r( move_uploaded_file( $source, $myFile ) );
+echo '</pre>';
+
     if( move_uploaded_file( $source, $myFile ) ) {
         if( file_exists( $myFile ) ) {
             $zip = new ZipArchive();
