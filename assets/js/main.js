@@ -19,10 +19,11 @@
 		e.preventDefault();
 		var __this 		= $( this ),
 			actionUrl 	= __this.attr( 'action' ) || '',
+			inputFile 	= __this.find( '#actual-btn' ) || '',
 			wpstandard 	= __this.find( '#wpstandard' ) || '',
 			wpseverity 	= __this.find( '#wpseverity' ) || '',
 			wpreporterr = __this.find( '#wpreporterr' ) || '';
-		if( '' != actionUrl && '' != wpstandard && '' != wpseverity && '' != wpreporterr ) {
+		if( '' != inputFile && '' != actionUrl && '' != wpstandard && '' != wpseverity && '' != wpreporterr ) {
 			__this.find( '.msg' ).removeClass( 'error' ).removeClass( 'success' ).hide();
 			$.ajax({
 				url: actionUrl,
@@ -37,6 +38,9 @@
 					__this.find( '.msg' ).addClass( result.status );
 				}           
 			});
+		} else {
+			__this.find( '.msg' ).html( 'Something went wrong.' ).show();
+			__this.find( '.msg' ).addClass( 'error' );
 		}
 		return false;
 	} );
