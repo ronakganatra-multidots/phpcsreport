@@ -108,17 +108,17 @@ if( $_FILES['files']['name'] ) {
 
                 // Create command string
                 $command_string = "vendor/bin/phpcs --standard=" . $standard . " " . $destination . $warning_error . " --report=csv --report-file=" . $destination . "/" . $filenoext . ".csv";
-                
                 $output = shell_exec( $command_string );
-                var_dump( $output );
-                exit( $command_string );
-                // echo '</pre>';
+                
+                // var_dump( $output );
+                // exit( $command_string );
+                // // echo '</pre>';
  
-                // $result = array(
-                //     'status'    => 'success',
-                //     'message'   => 'Process has successed..!!'
-                // );
-                // echo json_encode( $result );
+                $result = array(
+                    'status'    => 'success',
+                    'message'   => 'http://phpcsreport.dev1.in/' . $filenoext . '/' . $filenoext . '.csv'
+                );
+                echo json_encode( $result );
             }
         }
     }
