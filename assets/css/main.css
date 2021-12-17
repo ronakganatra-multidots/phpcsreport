@@ -1552,8 +1552,16 @@ select:active {
           margin-bottom: 10px;
   }
   .phpcs-section .phpcs-wrapper .phpcs-report-form button.main-btn-submit {
-      position: unset;
-      width: auto;
+    position: unset;
+    width: auto;
+    clear: both;
+    float: left;
+    margin-top: 10px;
+  }
+  .phpcs-section .phpcs-wrapper {
+    padding: 65px 50px 50px;
+    border-radius: 30px;
+    background: #ee5a0ef7;
   }
 }
 
