@@ -14,7 +14,7 @@
 				cache: false,
 				processData: false,
 				success: function( response ) {
-					var result = $.parseJSON( response );
+					var result = JSON.parse( response );
 					console.log( result );
 					__this.find( '.msg' ).html( 'Sucess..!!' );
 				}           
