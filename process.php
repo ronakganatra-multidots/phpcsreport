@@ -123,6 +123,13 @@ if( $_FILES['files']['name'] ) {
                 exit( $result );
             }
         }
+    } else {
+        $result = array(
+            'status'    => 'error',
+            'message'   => 'Please upload a smaller size .zip file.'
+        );
+        echo json_encode( $result );
+        die();
     }
 }
 exit();
