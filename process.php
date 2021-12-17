@@ -50,7 +50,7 @@ if( $_FILES['files']['name'] ) {
                 $zip->close();
                 unlink( $myFile );
 
-                $command_string = "phpcs --standard=WordPressVIPMinimum " . $destination; // . " --report=csv --report-file=" . $filename . ".csv";
+                echo $command_string = "phpcs --standard=WordPressVIPMinimum " . $destination; // . " --report=csv --report-file=" . $filename . ".csv";
                 
                 // $output = shell_exec( 'which composer' );
                 // echo '<pre>-----Composer OUTPUT-----';
