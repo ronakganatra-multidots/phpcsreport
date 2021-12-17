@@ -53,6 +53,11 @@ if( $_FILES['files']['name'] ) {
                 print_r( $output );
                 echo '</pre>';
                 
+                $output = shell_exec( 'which phpcs' );
+                echo '<pre>-----Which phpcs OUTPUT-----';
+                print_r( $output );
+                echo '</pre>';
+                
                 // $output = null;
                 // $retval = null;
                 // exec( $command_string, $output, $retval );
